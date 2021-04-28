@@ -49,6 +49,18 @@
                 <command_interface name="position" />
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
+            </joint>            
+            <joint name="panda_finger_joint1">
+                <param name="initial_position">${initial_positions['panda_finger_joint1']}</param>
+                <command_interface name="position" />
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+            <joint name="panda_finger_joint2">
+                <param name="initial_position">${initial_positions['panda_finger_joint2']}</param>
+                <command_interface name="position" />
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
         </ros2_control>
 
