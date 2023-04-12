@@ -131,8 +131,15 @@ planner_configs:
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
   TrajOptDefault:
     type: geometric::TrajOpt
+  PersistentLazyPRMstar: # use this with a representative environment to create a roadmap
+    type: geometric::LazyPRMstar
+    multi_query_planning_enabled: 1
+    store_planner_data: 0
+    load_planner_data: 0
+    planner_data_path: /tmp/roadmap.graph
 
 panda_arm:
+  default_planner_config: PersistentLazyPRMstar
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -158,7 +165,9 @@ panda_arm:
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
     - TrajOptDefault
+    - PersistentLazyPRMstar
 panda_arm_hand:
+  default_planner_config: PersistentLazyPRMstar
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -184,7 +193,9 @@ panda_arm_hand:
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
     - TrajOptDefault
+    - PersistentLazyPRMstar
 hand:
+  default_planner_config: PersistentLazyPRMstar
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -210,3 +221,4 @@ hand:
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
     - TrajOptDefault
+    - PersistentLazyPRMstar
